@@ -9,15 +9,22 @@
     background-image: url("/images/wine4.jpg");
 }
 
-.navbar,.navbar-dark,.bg-primary {background-color:rgba(0, 0, 0, 0.226) !important}
+.navbar,.navbar-dark,.bg-primary {background-color:rgba(0, 0, 0, 0.445) !important}
 .jumbotron {background-color:transparent;}
+.jumbotron .container{padding: 0 100px;}
+@media only screen and (max-width:768px){.jumbotron .container{padding: 0 10px;}}
 .jumbotron p {background-color:transparent; color:#ffffffab; font-weight: bold;}
 .form-inline {  
     display: flex;
     align-items:center;
     justify-content:center;
   }
-input {background-color: rgba(255, 255, 255, 0.247) !important; color: #ffffff !important;width: 40% !important; border:none !important;}
+input {background-color: rgba(255, 255, 255, 0.247) !important; color: #ffffff !important;}
+.sinput-title {flex-grow: 5;}
+.sinput-country {flex-grow: 1;}
+@media (min-width: 800px){
+    .jumbotron .container{padding: 0 0;}
+  }
 ::placeholder {color: #333 !important;}
 .btn-outline-secondary {padding: 0.50rem 1.5rem;transition-duration: 0.4s;}
 .btn-outline-secondary:hover,.btn-outline-secondary:focus {background-color:transparent !important}
