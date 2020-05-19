@@ -26,7 +26,7 @@ class App extends React.Component {
 
         {/* navbar */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand" href="/">Navbar</a>
+          <a className="navbar-brand" href="/">WorldWineApp</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -46,18 +46,24 @@ class App extends React.Component {
                 <a className="nav-link" href="/">About</a>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
+            {/*<form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-              <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+              <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>*/}
           </div>
         </nav>      
         {/* /navbar */}
 
         {/* search */}
         <div className="jumbotron text-center">
-          <h1>My First Bootstrap Page</h1>
-          <p>Resize this responsive page to see the effect!</p> 
+          <p>Search for your favorite wine</p> 
+          <div className="container">
+            <form className="form-inline my-2 my-lg-0">
+                <input className="form-control mr-sm-2 sinput-title" type="text" placeholder="Search" />
+                <input className="form-control mr-sm-2 sinput-country" type="text" placeholder="Country" />
+                <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
         </div>
         {/* /search */}
 
