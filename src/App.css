@@ -9,4 +9,5 @@
     background-image: url("/images/wine4.jpg");
 }
 
-.navbar,.navbar-dark,.bg-primary,.jumbotron {background-color:rgba(0,0,0,.2)}
+.navbar,.navbar-dark,.bg-primary,.jumbotron {background-color:transparent}
+.navbar,.navbar-dark,.bg-primary{background-color:rgba(0,0,0,.2) !important}
