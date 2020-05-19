@@ -9,5 +9,7 @@
     background-image: url("/images/wine4.jpg");
 }
 
-.navbar,.navbar-dark,.bg-primary,.jumbotron {background-color:transparent}
-.navbar,.navbar-dark,.bg-primary{background-color:rgba(0,0,0,.2) !important}
+.navbar,.navbar-dark,.bg-primary,input {background-color:rgba(0,0,0,.2) !important}
+.jumbotron {background-color:transparent}
+.btn-outline-secondary {padding: 0.50rem 1.5rem;transition-duration: 0.4s;}
+.btn-outline-secondary:hover {background-color:transparent !important}
