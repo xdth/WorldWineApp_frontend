@@ -1,14 +1,11 @@
 import React from 'react';
 
 class Searchbar extends React.Component {
-
   
   render() {
 
-
     return (
       <>
-      {/* search */}
       <div className="jumbotron text-center">
         <p>Search for your favorite wine</p> 
         <div className="container">
@@ -19,11 +16,9 @@ class Searchbar extends React.Component {
             </form>
           </div>
       </div>
-      {/* /search */}
       </>
     );
   }
 }
-
 
 export default Searchbar;

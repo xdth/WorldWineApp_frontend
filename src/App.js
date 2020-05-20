@@ -31,8 +31,7 @@ class App extends React.Component {
         <Searchbar/>
 
 
-      </div>
-      {/* -container */}
+      </div> {/* -container */}
       
 
       {/* container */}
