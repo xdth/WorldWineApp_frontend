@@ -2,7 +2,6 @@ import React from 'react';
 /* import logo from './logo.svg'; */
 import './App.css';
 import Navbar from './components/navbar';
-import Search from './components/searchbar';
 import Searchbar from './components/searchbar';
 
 class App extends React.Component {
