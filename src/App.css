@@ -10,8 +10,12 @@
 }
 
 .navbar,.navbar-dark,.bg-primary {background-color:rgba(0, 0, 0, 0.445) !important}
+.aright {
+    display: flex;
+    justify-content: flex-end !important;
+  }
 .jumbotron {background-color:transparent;}
-.jumbotron .container{padding: 0 100px;}
+.jumbotron .container{padding: 0 100px; height: 200px;}
 @media only screen and (max-width:768px){.jumbotron .container{padding: 0 10px;}}
 .jumbotron p {background-color:transparent; color:#ffffffab; font-weight: bold;}
 .form-inline {  
