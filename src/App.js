@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 /* import logo from './logo.svg'; */
 import './App.css';
 import Navbar from './components/navbar';
@@ -27,21 +33,45 @@ class App extends React.Component {
 
   render() {
 
+{/* Routing */}
+  function Home() {
+    return <h2>Home</h2>;
+  }
+  
+  function About() {
+    return <h2>About</h2>;
+  }
+  
+  function Users() {
+    return <h2>Users</h2>;
+  }    
 
     return (
       <>
+      <Router>
       
       {/* container-fluid */}
       <div className="container-fluid w-header">
-        <Navbar/>
+          <Navbar/>
+
         <Searchbar callbackFromParent={this.myCallback} />
       </div> {/* -container-fluid */}
       
 
       {/* container */}
       <div className="container home">
-        {/* homepage */}
-
+        {/* pages */}
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
         <Wines wines={this.state.winesFromSearch} />
 
         {/* footer?
@@ -82,6 +112,7 @@ class App extends React.Component {
 
 
 
+      </Router>
       </>
     );
   }
