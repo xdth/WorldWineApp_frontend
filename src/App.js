@@ -14,14 +14,12 @@ class App extends React.Component {
     this.myCallback = this.myCallback.bind(this);
   }
 
-  // myCallback = (dataFromSearch) => {
   myCallback(dataFromSearch) {
     this.setState({ winesFromSearch: dataFromSearch });
-    console.log("from child1: " + this.state.winesFromSearch);
-    this.otherFn(this.state.winesFromSearch);
+    this.jdebug(this.state.winesFromSearch);
   }
   
-  otherFn = (arg) => {
+  jdebug = (arg) => {
     console.log("from child2: " + typeof arg);
     console.log("from child2: " + JSON.stringify(arg, null, 2));
   }
@@ -46,6 +44,7 @@ class App extends React.Component {
 
         <Wines wines={this.state.winesFromSearch} />
 
+        {/* footer?
         <div className="row">
           <div className="col-sm-4">
             <h3>Column 1</h3>
@@ -63,36 +62,7 @@ class App extends React.Component {
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
           </div>
         </div>
-
-        <div className="row">
-          <div className="col-sm-8">
-            <h3>Column A</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            <div className="row">
-              <div className="col-sm-12">
-                <h3>Row 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-              </div>
-              <div className="col-sm-12">
-                <h3>Row 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-              </div>
-              <div className="col-sm-12">
-                <h3>Row 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <h3>Column P</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-        </div>
+          */}
 
         <div className="row">
               <div className="col-sm-12">
