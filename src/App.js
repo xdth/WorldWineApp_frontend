@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/navbar';
 import Searchbar from './components/searchbar';
+import Wines from './components/wines';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,19 +33,19 @@ class App extends React.Component {
     return (
       <>
       
-      {/* container */}
+      {/* container-fluid */}
       <div className="container-fluid w-header">
-
         <Navbar/>
         <Searchbar callbackFromParent={this.myCallback} />
-
-
-      </div> {/* -container */}
+      </div> {/* -container-fluid */}
       
 
       {/* container */}
       <div className="container home">
         {/* homepage */}
+
+        <Wines wines={this.state.winesFromSearch} />
+
         <div className="row">
           <div className="col-sm-4">
             <h3>Column 1</h3>

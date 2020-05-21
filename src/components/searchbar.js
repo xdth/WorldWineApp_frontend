@@ -31,7 +31,6 @@ class Searchbar extends React.Component {
     const json = await response.json();
     this.setState({ wines: json });
         
-        
     console.log("dump from component" + JSON.stringify(this.state.wines, null, 2));
 
     this.props.callbackFromParent(this.state.wines);
