@@ -8,15 +8,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      scrolled: false,
-      title: '', 
-      country: '', 
-      wines: [] 
+      winesFromSearch: [] 
     };
-
+    this.myCallback = this.myCallback.bind(this);
   }
 
+  // myCallback = (dataFromSearch) => {
+  myCallback(dataFromSearch) {
+    this.setState({ winesFromSearch: dataFromSearch });
+    console.log("from child1: " + this.state.winesFromSearch);
+    this.otherFn(this.state.winesFromSearch);
+  }
   
+  otherFn = (arg) => {
+    console.log("from child2: " + typeof arg);
+    console.log("from child2: " + JSON.stringify(arg, null, 2));
+  }
+
+
   render() {
 
 
@@ -27,7 +36,7 @@ class App extends React.Component {
       <div className="container-fluid w-header">
 
         <Navbar/>
-        <Searchbar/>
+        <Searchbar callbackFromParent={this.myCallback} />
 
 
       </div> {/* -container */}

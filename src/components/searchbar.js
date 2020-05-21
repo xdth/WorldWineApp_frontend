@@ -4,7 +4,6 @@ class Searchbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      scrolled: false,
       title: '', 
       country: '', 
       wines: [] 
@@ -24,20 +23,18 @@ class Searchbar extends React.Component {
     this.setState({country: event.target.value});
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    /*
-    http://192.168.1.44:3000/wines?filter={"where":{"and":{"title":{"like":"bru%25","options":"i"}},{"country":{"like":"bra%25","options":"i"}}},"limit":3}
-    http://192.168.1.44:3000/wines?filter[where][title][like]=Bru%25&filter[where][country][like]=US%25&filter[limit]=3
-    */
-    // fetch('http://192.168.1.44:3000/wines?filter={"where":{"title":{"like":"'+ this.state.title + '%25","options":"i"}},"limit":3}')
-    fetch('http://192.168.1.44:3000/wines?filter[where][title][like]=%25'+ this.state.title + '%25&filter[where][country][like]='+ this.state.country + '%25&filter[limit]=30')
-    .then(res => res.json())
-    .then((data) => {
-        this.setState({ wines: data })
-    })
-    .catch(console.log)
+
+    // api call
+    const response = await fetch('http://192.168.1.44:3000/wines?filter[where][title][like]=%25'+ this.state.title + '%25&filter[where][country][like]='+ this.state.country + '%25&filter[limit]=3');
+    const json = await response.json();
+    this.setState({ wines: json });
         
+        
+    console.log("dump from component" + JSON.stringify(this.state.wines, null, 2));
+
+    this.props.callbackFromParent(this.state.wines);
   }
   
   
