@@ -24,11 +24,11 @@ class Navbar extends React.Component {
               <a className="nav-link" href="/">Ranking</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">About</a>
+              <a className="nav-link" href="/about">About</a>
             </li>
           </ul>
         </div>
-      </nav>      
+      </nav>
       </>
     );
   }

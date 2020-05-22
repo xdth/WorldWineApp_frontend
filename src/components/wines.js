@@ -1,6 +1,13 @@
 import React from 'react'
+import {
+    Link,
+    useRouteMatch
+  } from "react-router-dom";
 
 const Wines = ({wines}) => {
+    if (!wines) return 'no data';
+    if (!Array.isArray(wines)) return 'results are not array'
+    //let match = useRouteMatch();
     return (
         <div className="row">
           <div className="col-sm-8">
@@ -13,7 +20,8 @@ const Wines = ({wines}) => {
                 <h5>{wine.title}</h5>
                 <h6>{wine.country}</h6>
                 <p>{wine.winery}</p>
-                <a href={`/${wine.id}`} >link</a>
+                <a href={`/wines/${wine.id}`} >link</a>
+                {/*<Link to={`${match.url}/${wine.id}`}>Link</Link>*/}
               </div>
             ))}
             </div>
