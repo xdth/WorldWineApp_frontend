@@ -4,6 +4,25 @@ import {
     useRouteMatch
   } from "react-router-dom";
 
+
+  class Wines extends React.Component {
+    constructor(props) {
+      super(props);
+  
+    }
+  
+    render() {
+  
+      return (
+        <>
+        </>
+      );
+    }
+  }
+
+
+
+ {/* 
 const Wines = ({wines}) => {
     if (!wines) return 'no data';
     if (!Array.isArray(wines)) return 'results are not array'
@@ -21,7 +40,7 @@ const Wines = ({wines}) => {
                 <h6>{wine.country}</h6>
                 <p>{wine.winery}</p>
                 <a href={`/wines/${wine.id}`} >link</a>
-                {/*<Link to={`${match.url}/${wine.id}`}>Link</Link>*/}
+                {/*<Link to={`${match.url}/${wine.id}`}>Link</Link>* /}
               </div>
             ))}
             </div>
@@ -36,5 +55,5 @@ const Wines = ({wines}) => {
 
     )
 };
-
+*/}
 export default Wines
