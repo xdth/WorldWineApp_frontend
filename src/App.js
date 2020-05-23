@@ -11,7 +11,11 @@ import {
 import './App.css';
 import Navbar from './components/navbar';
 import Searchbar from './components/searchbar';
-import Wines from './components/wines';
+import Results from './components/results';
+
+import Home from './components/pages/home';
+import Wines from './components/pages/wines';
+import About from './components/pages/about';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,15 +37,7 @@ class App extends React.Component {
   }
 
   render() {
-
-  function Home() {
-    return <h2>Home</h2>;
-  }
-  
-  function About() {
-    return <h2>About</h2>;
-  }
-
+    
   function Topics() {
     let match = useRouteMatch();
     return (
@@ -80,6 +76,29 @@ class App extends React.Component {
     return <h3>Requested topic ID: {topicId}</h3>;
   }
 
+  {/* Show either the pages or the search results */}
+  let SearchResults;
+  if (this.state.winesFromSearch && this.state.winesFromSearch.length > 0) {
+    SearchResults = <Results results={this.state.winesFromSearch}/>
+  } else {
+    SearchResults = 
+    <Switch>
+    <Route path="/about">
+      <About />
+    </Route>
+    <Route path="/topics">
+      <Topics />
+    </Route>
+    <Route path="/wines">
+      <Wines />
+    </Route>
+    <Route path="/">
+      <Home />
+    </Route>
+  </Switch>;
+  }
+
+
     return (
       <>
       <Router>
@@ -92,35 +111,10 @@ class App extends React.Component {
 
       {/* container */}
       <div className="container home">
-        {/* pages */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/topics">
-            <Topics />
-          </Route>
-          <Route path="/wines">
-            <Wines />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-
-        {this.state.winesFromSearch && this.state.winesFromSearch.length > 0 ? <Wines wines={this.state.winesFromSearch}/> : null}
-      
-        <div className="row">
-              <div className="col-sm-12">
-                <p>0 results found.</p>
-              </div>
-        </div>
-
-
+        {/* pages or search results*/}
+        {SearchResults}
       </div>
       {/* /container */}
-
-
 
       </Router>
       </>
