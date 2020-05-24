@@ -1,40 +1,40 @@
 import React from 'react'
 import {
-    //Link,
-    //useRouteMatch
+    Link,
+    useRouteMatch
   } from "react-router-dom";
 
 
 const Results = ({results}) => {
-  if (!results) return 'no data';
-  if (!Array.isArray(results)) return 'results are not array'
-  //let match = useRouteMatch();
+  let match = useRouteMatch();
   return (
+    <>
+      <ol className="breadcrumb">
+          <li className="breadcrumb-item"><a href="/">Home</a></li>
+          <li className="breadcrumb-item"><a href="/wines">Wines</a></li>
+          <li className="breadcrumb-item active">Search results</li>
+      </ol>
       <div className="row">
         <div className="col-sm-8">
-          <h3>Search results</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <br/>
+          <h2>Search results</h2>
+          <br/><br/><br/>
           <div className="row">
           {results.map((result) => (
             <div className="col-sm-12" key={result.id}>
-              <h5>{result.title}</h5>
-              <h6>{result.country}</h6>
-              <p>{result.resultry}</p>
-              <a href={`/wines/${result.id}`} >link</a>
-              {/*<Link to={`${match.url}/${result.id}`}>Link</Link>*/}
+              <Link to={`${match.url}/${result.id}`}>
+                <h4>{result.title}</h4>
+                <h5><i>{result.designation}</i></h5>
+                <h5><span className="badge badge-primary">{result.country}</span></h5>
+              </Link>
+              <hr/>
             </div>
           ))}
           </div>
         </div>
         <div className="col-sm-4">
-          <h3>Column P</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
       </div>
-
-
+    </>
   )
 };
 
