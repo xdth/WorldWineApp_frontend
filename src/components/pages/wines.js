@@ -27,30 +27,14 @@ const Wines = () => {
 
   //let wineId = useParams();
   let match = useRouteMatch();
-  console.log("wineid is : " + JSON.stringify(match, null, 2));
+  // console.log("wineid is : " + JSON.stringify(match, null, 2));
 
   
   return (
     <>
     <Switch>
       <Route path={`${match.path}/:wineId`}>
-        <div className="row">
-          <div className="col-sm-8">
-            <h2>Winex</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <br/>
-            <div className="row">              
-              <div className="col-sm-12">
-                <Wine />
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <h3>Column P</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-        </div>
+        <Wine />
       </Route>
 
       <Route exact path={match.path}>
@@ -65,8 +49,7 @@ const Wines = () => {
                 <h5>{result.title}</h5>
                 <h6>{result.country}</h6>
                 <p>{result.resultry}</p>
-                <a href={`/wines/${result.id}`} >link</a>
-                <Link to={`${match.url}/${result.id}`}>Link</Link>
+                <Link to={`${match.url}/${result.id}`}>view</Link>
               </div>
             ))}
             </div>
