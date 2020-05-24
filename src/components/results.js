@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-    Link,
-    useRouteMatch
+    //Link,
+    //useRouteMatch
   } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ const Results = ({results}) => {
               <h5>{result.title}</h5>
               <h6>{result.country}</h6>
               <p>{result.resultry}</p>
-              <a href={`/results/${result.id}`} >link</a>
+              <a href={`/wines/${result.id}`} >link</a>
               {/*<Link to={`${match.url}/${result.id}`}>Link</Link>*/}
             </div>
           ))}

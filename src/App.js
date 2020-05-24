@@ -76,7 +76,7 @@ class App extends React.Component {
     return <h3>Requested topic ID: {topicId}</h3>;
   }
 
-  {/* Show either the pages or the search results */}
+  /* Show either the pages or the search results */
   let SearchResults;
   if (this.state.winesFromSearch && this.state.winesFromSearch.length > 0) {
     SearchResults = <Results results={this.state.winesFromSearch}/>
