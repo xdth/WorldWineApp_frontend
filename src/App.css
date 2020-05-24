@@ -34,3 +34,5 @@ input {background-color: rgba(255, 255, 255, 0.247) !important; color: #ffffff !
 .btn-outline-secondary:hover,.btn-outline-secondary:focus {background-color:transparent !important}
 
 blockquote {margin: 20px 0px !important;}
+
+a:hover {text-decoration: none !important;}

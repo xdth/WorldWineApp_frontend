@@ -47,16 +47,14 @@ const Wines = () => {
         <div className="row">
           <div className="col-sm-8">
             <h2>Wines catalog</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <br/>
+            <br/><br/><br/>
             <div className="row">
             {wines.map((result) => (
               <div className="col-sm-12" key={result.id}>
                 <Link to={`${match.url}/${result.id}`}>
-                <h5>{result.title}</h5>
-                <h6>{result.country}</h6>
-                <p>{result.resultry}</p>
-                  
+                <h4>{result.title}</h4>
+                <h5><i>{result.designation}</i></h5>
+                <h5><span className="badge badge-primary">{result.country}</span></h5>
                 </Link>
                 <hr/>
               </div>
