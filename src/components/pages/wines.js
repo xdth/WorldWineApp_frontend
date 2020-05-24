@@ -10,10 +10,11 @@ import {
 import Wine from './wine';
 
 const Wines = () => {
+
   const [wines, setWines] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.1.44:3000/wines?filter[where][title][like]=%25%25&filter[where][country][like]=%25&filter[limit]=3")
+    fetch("http://192.168.1.44:3000/wines?filter[where][title][like]=%25%25&filter[where][country][like]=%25&filter[limit]=500")
       .then(results => {
         return results.json();
       })
@@ -38,6 +39,11 @@ const Wines = () => {
       </Route>
 
       <Route exact path={match.path}>
+
+        <ol className="breadcrumb">
+            <li className="breadcrumb-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item active">Wines</li>
+        </ol>
         <div className="row">
           <div className="col-sm-8">
             <h2>Wines catalog</h2>
@@ -46,18 +52,18 @@ const Wines = () => {
             <div className="row">
             {wines.map((result) => (
               <div className="col-sm-12" key={result.id}>
+                <Link to={`${match.url}/${result.id}`}>
                 <h5>{result.title}</h5>
                 <h6>{result.country}</h6>
                 <p>{result.resultry}</p>
-                <Link to={`${match.url}/${result.id}`}>view</Link>
+                  
+                </Link>
+                <hr/>
               </div>
             ))}
             </div>
           </div>
           <div className="col-sm-4">
-            <h3>Column P</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
           </div>
         </div>
       </Route>
