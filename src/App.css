@@ -6,7 +6,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;    
-    background-image: url("/images/wine4.jpg");
+    background-image: url("/images/wine.jpg");
 }
 
 .navbar,.navbar-dark,.bg-primary {background-color:rgba(0, 0, 0, 0.445) !important}
@@ -36,3 +36,16 @@ input {background-color: rgba(255, 255, 255, 0.247) !important; color: #ffffff !
 blockquote {margin: 20px 0px !important;}
 
 a:hover {text-decoration: none !important;}
+
+
+/* GoToTop component */
+.go-to-top {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
+  
+}
+.go-to-top img {width: 30px;}
+

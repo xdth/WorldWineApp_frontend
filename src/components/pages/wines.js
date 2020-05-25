@@ -7,6 +7,7 @@ import {
   useRouteMatch,
   //useParams
   } from "react-router-dom";
+
 import Wine from './wine';
 
 const Wines = () => {
@@ -14,7 +15,7 @@ const Wines = () => {
   const [wines, setWines] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.1.44:3000/wines?filter[where][title][like]=%25%25&filter[where][country][like]=%25&filter[limit]=500")
+    fetch(process.env.REACT_APP_API_URL + "/wines?filter[where][title][like]=%25%25&filter[where][country][like]=%25&filter[limit]=500")
       .then(results => {
         return results.json();
       })
@@ -51,11 +52,12 @@ const Wines = () => {
             <div className="row">
             {wines.map((result) => (
               <div className="col-sm-12" key={result.id}>
-                <Link to={`${match.url}/${result.id}`}>
+              <Link to={`${match.url}/${result.id}`}>
                 <h4>{result.title}</h4>
                 <h5><i>{result.designation}</i></h5>
                 <h5><span className="badge badge-primary">{result.country}</span></h5>
-                </Link>
+              </Link>
+                {/*<a href={'/wines/' + result.id}>xxx</a>*/}
                 <hr/>
               </div>
             ))}

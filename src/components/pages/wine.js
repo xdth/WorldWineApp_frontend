@@ -48,7 +48,7 @@ import {
             <footer className="blockquote-footer">{wine.taster_name} <cite title="Review author">{wine.taster_twitter_handle ? "(" + wine.taster_twitter_handle + ")" : null}</cite></footer>
           </blockquote>      
 
-          <table class="table">
+          <table className="table">
             <tbody>
               <tr>
                 <th scope="col">Designation</th>

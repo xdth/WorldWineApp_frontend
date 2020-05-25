@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-    Link,
-    useRouteMatch
+    //Link,
+    //useRouteMatch
   } from "react-router-dom";
 
 
 const Results = ({results}) => {
-  let match = useRouteMatch();
+  // let match = useRouteMatch();
   return (
     <>
       <ol className="breadcrumb">
@@ -21,11 +21,16 @@ const Results = ({results}) => {
           <div className="row">
           {results.map((result) => (
             <div className="col-sm-12" key={result.id}>
-              <Link to={`${match.url}/${result.id}`}>
+             {/* <a href={'/wines/' + result.id}>*/}
+              <a href={'/wines/' + result.id}>
+              {/*<Link to={`${match.url}/${result.id}`}>*/}
                 <h4>{result.title}</h4>
                 <h5><i>{result.designation}</i></h5>
                 <h5><span className="badge badge-primary">{result.country}</span></h5>
-              </Link>
+              {/*</Link>*/}
+              {/*<a href={'/wines/' + result.id}>xxx</a>*/}
+              {/*</a>*/}
+              </a>
               <hr/>
             </div>
           ))}
