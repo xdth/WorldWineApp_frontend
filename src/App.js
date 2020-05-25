@@ -8,7 +8,6 @@ import {
   //useParams
 } from "react-router-dom";
 /* import logo from './logo.svg'; */
-import './App.css';
 import Navbar from './components/navbar';
 import Searchbar from './components/searchbar';
 import Results from './components/results';
@@ -16,6 +15,10 @@ import Results from './components/results';
 import Home from './components/pages/home';
 import Wines from './components/pages/wines';
 import About from './components/pages/about';
+
+import GoToTop from "./components/GoToTop";
+
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,13 +66,14 @@ class App extends React.Component {
       <Router>
       
       {/* container-fluid */}
-      <div className="container-fluid w-header">
+      <div className="container-fluid" id="w-header">
         <Navbar/>
         <Searchbar callbackFromParent={this.myCallback} />
       </div> {/* -container-fluid */}
 
       {/* container */}
       <div className="container home">
+        <GoToTop/>
         {/* pages or search results*/}
         {SearchResults}
       </div>

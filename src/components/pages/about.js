@@ -10,6 +10,8 @@ const About = () => {
         <div className="row">
           <div className="col-sm-8">
           <h2>About</h2>
+            <p>Author: lucasdth</p>
+            <p>Find the source code <a href="https://github.com/xdth/WorldWineApp_frontend" alt="github">here</a>.</p>
             <p>This app is still under construction.</p>
           </div>
           <div className="col-sm-4">
